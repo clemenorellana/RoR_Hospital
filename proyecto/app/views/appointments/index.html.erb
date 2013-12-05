@@ -1,0 +1,26 @@
+<h1>Listado de Citas</h1>
+<table>
+<tr>
+<th>ID</th>
+<th>Nombre paciente</th>
+<th>Nombre Doctor</th>
+<th>Fecha</th>
+<th>Estado</th>
+</tr>
+<% @appointments.each do |cita| %>
+<tr>
+<td><%=  link_to cita.id, cita %></td>
+<td><%= cita.doctor.name %></td>
+<td><%= cita.patient.name %></td>
+<td><%= cita.appointmentdate %></td>
+<% if cita.state %>
+<td>Atendida</td>
+<%else %>
+<td>No Atendida</td>
+<% end %>
+</tr>
+<% end %>
+
+</table>
+
+<%= link_to "Nueva Cita", new_appointment_path %>

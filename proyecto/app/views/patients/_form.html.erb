@@ -1,0 +1,46 @@
+<div>
+  <% if @patient.errors.any? %>
+    <b><em>HAY ERRORES:</em></b>
+    <p>
+      <%= @patient.errors.full_messages.join(", ") %>
+    <p>
+  <% end %>
+</div>
+
+
+<%= form_for @patient do |paciente| %>
+<div>
+<%= paciente.label :name, "Nombre" %>
+<%= paciente.text_field :name %>
+</div>
+
+<div>
+<%= paciente.label :email, "Correo" %>
+<%= paciente.email_field :email %>
+</div>
+
+
+<div>
+<%= paciente.label :birthday, "Fecha de nacimiento" %>
+<%= paciente.date_select :birthday %>
+</div>
+
+<div>
+<%= paciente.label :phone, "Telefono" %>
+<%= paciente.text_field :phone %>
+</div>
+
+<div>
+<%= paciente.label :leyend, "Historial" %>
+<%= paciente.text_area :leyend %>
+</div>
+
+	<% if !paciente.blank? %>
+		<div>
+			<%= paciente.label :live, "es persona viviente?" %>
+			<%= paciente.check_box :live %>
+		</div>
+	<% end %>
+		
+<div><%= paciente.submit %></div>
+<% end %>

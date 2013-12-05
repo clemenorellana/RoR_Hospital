@@ -1,0 +1,34 @@
+<div>
+  <% if @doctor.errors.any? %>
+    <b><em>HAY ERRORES:</em></b>
+    <p>
+      <%= @doctor.errors.full_messages.join(", ") %>
+    <p>
+  <% end %>
+</div>
+
+
+<%= form_for @doctor do |d| %>
+<div>
+<%= d.label :name, "Nombre" %>
+<%= d.text_field :name %>
+</div>
+
+<div>
+<%= d.label :address, "Direccion" %>
+<%= d.text_area :address %>
+</div>
+
+<div>
+<%= d.label :email, "Correo" %>
+<%= d.email_field :email %>
+</div>
+
+
+<div>
+	<%= d.label :speciality, "Especialidad" %>
+	<%= d.select :speciality, Speciality.all %>	
+</div>
+
+<%= d.submit %>
+<% end %>

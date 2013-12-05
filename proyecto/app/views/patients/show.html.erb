@@ -1,0 +1,36 @@
+<h1>Patients#show</h1>
+<div>
+Nombre :
+<%= @patient.name %>
+
+</div>
+
+<div>
+Telefono :
+<%= @patient.phone %>
+
+</div>
+
+<div>
+Email :
+<%= @patient.email %>
+
+</div>
+
+<div>
+Fecha Nacimiento :
+<%= @patient.birthday %>
+
+</div>
+
+<div>
+Historial :
+<%= @patient.leyend %>
+
+</div>
+
+<%= link_to "Editar Paciente", edit_patient_path(@patient) %>
+
+<%= link_to "Historial de Citas", appointments_patient_path(@patient) %>
+
+<%= link_to "Listado Pacientes", patients_path %>

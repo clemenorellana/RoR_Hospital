@@ -1,0 +1,16 @@
+<h1>Editing Phone</h1>
+
+
+<%= form_for @phone do |phone| %>
+<div>
+<%= phone.label :number, "numero" %>
+<%= phone.text_field :number %>
+</div>
+
+<div>
+<%= phone.label :phonetype, "tipo" %>
+<%= phone. text_field :phonetype %>
+
+</div>
+<p><%= phone.submit %></p>
+<% end %>

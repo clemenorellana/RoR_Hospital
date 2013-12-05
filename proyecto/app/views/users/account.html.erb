@@ -1,0 +1,14 @@
+
+<h1>Show #User</h1>
+<p> Nombre : <%= current_user.name %></p>
+<p> Acceso : <%= current_user.level %></p>
+<p> Email : <%= current_user.email %></p>
+
+<% if current_user.level== "administrador"%>
+<%= link_to "Usuarios del sistema", users_path %>
+<%= link_to "Crear Nuevo Usuario", new_user_path %>
+<% end %>
+
+<%= link_to "Editar Perfil de Usuario", edit_user_path(current_user.id)%>
+
+

@@ -1,0 +1,21 @@
+<html >
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Estimado <%= @patient.name %></h1>
+    <p>
+      Ud tiene una cita, acontinuacion se detallan los datos.<br/>
+      <li> 
+        Fecha de la cita: <%= @appointment.appointmentdate %>
+      </li>
+      <li>
+        Doctor quien le atendera: <%= @doctor.name %>
+      </li>
+      <li>
+        Decripcion de la cita: <%= @appointment.description %>
+      </li>
+    </p>
+    <p>Gracias!</p>
+  </body>
+</html>

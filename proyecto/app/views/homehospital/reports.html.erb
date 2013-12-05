@@ -1,0 +1,35 @@
+<h1> Reportes</h1>
+<h2> Citas</h2>
+<div>
+    Total Citas : <%= Appointment.count %>
+</div>
+<div>
+    Citas atendidas : <%= Appointment.where(state: true).count %>
+</div>
+<div>
+    Citas pendientes : <%= Appointment.where(state: false).count %>
+</div>
+
+<h2> Doctores</h2>
+<div>
+    Total Doctores : <%= Doctor.count %>
+</div>
+
+<h2> Pacientes</h2>
+<div>
+    Total Pacientes : <%= Patient.count %>
+</div>
+<div>
+    Pacientes vivos : <%= Patient.where(live: true).count %>
+</div>
+<div>
+    Pacientes muertos : <%= Patient.where(live: false).count %>
+</div>
+
+<h2> Monto generado</h2>
+<div>
+    Citas atendidas : <%= Appointment.where(state: true).sum(:bill) %>
+</div>
+
+<%= link_to "Ranking", ranking_path %>
+

@@ -1,0 +1,47 @@
+<h1>Doctors#show</h1>
+
+<p>Nombre</p>
+<p><%= @doctor.name %></p>
+<p>Email</p>
+<p><%=@doctor.email %></p>
+<p>Especialidad</p>
+<p><%= @doctor.speciality %></p>
+<p>Direccion</p>
+<%= @doctor.address %>
+<p>Phones</p>
+
+<%= form_for [@doctor, Phone.new] do |phone| %>
+<div>
+<%= phone.label :number, "numero" %>
+<%= phone.text_field :number %>
+</div>
+
+<div>
+<%= phone.label :phonetype, "tipo" %>
+<%= phone. text_field :phonetype %>
+
+</div>
+<p><%= phone.submit %></p>
+<% end %>
+
+<table>
+	<tr>
+<th>Numero</th>
+<th>Tipo</th>
+	</tr>
+<% @doctor.phones.each do |ph| %>
+<tr>
+<td><%= ph.number %></td>
+<td><%= ph.phonetype %></td>
+<td><%= link_to "editar", edit_phone_path(ph.id) %></td>
+
+</tr>
+<%end %>
+</table>
+
+<%= link_to "Editar Doctor", edit_doctor_path(@doctor) %>
+
+<%= link_to "Back", doctors_path %>
+<%= link_to "Historial de Citas", appointments_doctor_path(@doctor) %>
+
+

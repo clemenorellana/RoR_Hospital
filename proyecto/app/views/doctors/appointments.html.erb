@@ -1,0 +1,20 @@
+<h1> Historial de Citas</h1>
+<p>Citas Atendidas</p>
+<ul>
+<% @doctor.appointments.each do |ap| %>
+<% if ap.state %>
+<li>Fecha :  <p><%=ap.appointmentdate %></p> Descripcion :<p><%= ap.description %></p><p><%= link_to "Ver Cita", appointment_path(ap) %></p></li>
+<% end %>
+<%end %>
+</ul>
+
+<p> Citas No Atendidas</p>
+<ul>
+<% @doctor.appointments.each do |ap| %>
+<% if not ap.state %>
+<li>Fecha :  <p><%=ap.appointmentdate %></p> Descripcion :<p><%= ap.description %></p><p><%= link_to "Atender cita", atendercita_path(ap.doctor.id, ap.id)%></p></li>
+<% end %>
+<%end %>
+</ul>
+
+<%= link_to "Doctores", doctors_path %>

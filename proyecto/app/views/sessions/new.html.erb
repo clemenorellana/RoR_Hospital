@@ -1,0 +1,19 @@
+
+<h1>Please Log Ineese</h1>
+ <% if flash[:notice] %>
+ <p><%= flash[:notice] %></p>
+ <% end %>
+
+ <%= form_tag login_path do %>
+ <div>
+<%= label_tag :username %>
+<%= text_field_tag :username, cookies.signed[:username] %>
+ </div>
+
+ <div>
+<%= label_tag :password %>
+<%= password_field_tag :password %>
+</div>
+
+<%= submit_tag "login", class: "submit" %>
+<% end %>

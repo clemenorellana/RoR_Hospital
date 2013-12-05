@@ -1,0 +1,53 @@
+<h1>Appointments#show</h1>
+
+<div>
+Fecha :
+<%=@appointment.appointmentdate %>
+</div>
+
+<div>
+Descripcion :
+<%=@appointment.description %>
+</div>
+
+<div>
+Monto a pagar :
+<%=@appointment.bill %>
+</div>
+
+<div>
+Paciente :
+<%=@appointment.patient.name %>
+</div>
+
+<div>
+Doctor :
+<%=@appointment.doctor.name %>
+</div>
+
+<div>
+Diagnostico :
+<%=@appointment.diagnostic %>
+</div>
+
+<div>
+Sintomas :
+<%=@appointment.sintomas %>
+</div>
+
+<div>
+Estado :
+<% if @appointment.state %>
+Atendido
+<% else %>
+No Atendido
+<% end %>
+</div>
+
+
+<% if @appointment.state %>
+
+<% else %>
+<%= link_to "Editar Cita", edit_appointment_path(@appointment) %>
+<% end %>
+

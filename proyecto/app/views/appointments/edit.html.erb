@@ -1,0 +1,20 @@
+<h1>Appointments#edit</h1>
+<p>Find me in app/views/appointments/edit.html.erb</p>
+<%= form_for @appointment do |a| %>
+<div>
+<%= a.label :appointmentdate, "Fecha" %>
+<%= a.date_select :appointmentdate %>
+</div>
+<div>
+<%= a.label :doctor_id, "Doctor " %>
+<%= a.select :doctor_id, options_from_collection_for_select( Doctor.all, :id, :name)  %>
+</div>
+
+<div>
+<%= a.label :patient_id, "Paciente" %>
+<%= a.select :patient_id, options_from_collection_for_select(Patient.all, :id, :name) %>
+</div>
+
+<%= a.submit %>
+<% end %>
+<%= link_to "Borrar Cita", @appointment, method: :delete, data: { confirm: "Esta Ud Seguro?"} %>

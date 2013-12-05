@@ -1,0 +1,47 @@
+<h1>Appointments#new</h1>
+
+<%= form_for @appointment do |a| %>
+<div>
+<%= a.label :appointmentdate, "Fecha" %>
+<%= a.date_select :appointmentdate %>
+</div>
+
+<div>
+<%= a.label :description, "Descripcion" %>
+<%= a.text_area :description %>
+</div>
+
+<div>
+<%= a.label :bill, "Total a pagar" %>
+<%= a.text_field :bill %>
+</div>
+
+<div>
+<%= a.label :diagnostic, "Diagnostico" %>
+<%= a.text_area :diagnostic %>
+</div>
+
+<div>
+<%= a.label :sintomas, "Sintomas" %>
+<%= a.text_area :sintomas %>
+</div>
+
+<div>
+<%= a.label :state, "Esta atendida??" %>
+<%= a.check_box :state %>
+</div>
+
+<div>
+<%= a.label :doctor_id, "Doctor " %>
+<%= a.select :doctor_id, options_from_collection_for_select( Doctor.all, :id, :name)  %>
+</div>
+
+<div>
+<%= a.label :patient_id, "Paciente" %>
+<%= a.select :patient_id, options_from_collection_for_select(Patient.where(live: true), :id, :name) %>
+</div>
+
+<%= a.submit %>
+<% end %>
+
+

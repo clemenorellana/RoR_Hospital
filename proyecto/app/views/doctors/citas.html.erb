@@ -1,0 +1,17 @@
+<%= form_for @appointment do |a| %>
+<div>
+<%= a.label :bill, "Total a pagar" %>
+<%= a.text_field :bill %>
+</div>
+
+<div>
+<%= a.label :diagnostic, "Diagnostico" %>
+<%= a.text_area :diagnostic %>
+</div>
+
+<div>
+<%= a.label :sintomas, "Sintomas" %>
+<%= a.text_area :sintomas %>
+</div>
+<%= a.submit %>
+<% end %>

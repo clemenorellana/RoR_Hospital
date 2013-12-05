@@ -1,0 +1,22 @@
+<h1>Agregar nuevo numero</h1>
+
+
+<p> <%=@doctor.name %></p>
+<ul>
+<% @doctor.phones.each do |ph| %>
+<li><%=ph.number %></li>
+<%end %>
+</ul>
+<%= form_for [@doctor, @doctor.phones.build] do |phone| %>
+<div>
+<%= phone.label :number, "numero" %>
+<%= phone.text_field :number %>
+</div>
+
+<div>
+<%= phone.label :phonetype, "tipo" %>
+<%= phone. text_field :phonetype %>
+
+</div>
+<p><%= phone.submit %></p>
+<% end %>

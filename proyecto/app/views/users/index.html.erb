@@ -1,0 +1,23 @@
+<h1>Listado de Usuario</h1>
+<table>
+<tr>
+<th>Email</th>
+<th>Tipo</th>
+</tr>
+<% @users.each do |s| %>
+<tr>
+<td><%=s.email%></td>
+<td><%=s.level%></td>
+<% if not current_user.id==s.id %>
+<% if current_user.level== "administrador"%>
+<td><%= link_to "Borrar", s, method: :delete, data: { confirm: "are YOU sure??" } %></td>
+<%end %>
+<% end %>
+</tr>
+
+<% end %>
+
+</table>
+
+
+<%= link_to "Nuevo Usuario", new_user_path %>

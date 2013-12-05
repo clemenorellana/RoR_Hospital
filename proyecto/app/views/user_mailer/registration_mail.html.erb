@@ -1,0 +1,23 @@
+<html >
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Bienvenido <%= @user.name %></h1>
+    <p>
+      Usted ha sido registrado en RoR Hospital.<br/>
+      Sus datos son los siguientes:
+      <li>
+        Username: <%= @user.username %>
+      </li>
+      <li> 
+        Correo electronico: <%= @user.email %>
+      </li>
+      <li>
+        Tipo de usuario: <%= @user.level %>
+      </li>
+
+    </p>
+    <p>Gracias por unirte!</p>
+  </body>
+</html>

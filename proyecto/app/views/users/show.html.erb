@@ -1,0 +1,14 @@
+<h1>Show #User</h1>
+<p> Nombre : <%= @user.name %></p>
+<p> Acceso : <%= @user.level %></p>
+<p> Email : <%= @user.email %></p>
+
+
+
+
+<p>Correos de Usuarios</p>
+<ul>
+<% @users.each do |s| %>
+<li><%= s.email %></li>
+<% end %>
+</ul>

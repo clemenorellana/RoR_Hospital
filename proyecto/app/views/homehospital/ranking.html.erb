@@ -1,0 +1,20 @@
+<h1>Ranking </h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Especialidad</th>
+        <th>Citas Atendidas</th>
+        <th>Monto Generado</th>
+    </tr>
+    <% @rankings.each do |ranking| %>
+      <tr>
+        <td><%= ranking.id %></td>
+        <td><%= ranking.name %></td>
+        <td><%= ranking.speciality %></td>
+        <td><%= ranking.appointments %></td>
+        <td><%= ranking.bill %></td>
+      </tr>
+    <% end %>
+</table>

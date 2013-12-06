@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	layout 'login'
+
 
 
 def new

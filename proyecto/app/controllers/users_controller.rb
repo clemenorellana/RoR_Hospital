@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+	layout 'login', :only => [:account]
+	
 
 def new
 	@user=User.new
@@ -42,7 +44,7 @@ end
 def destroy
 @user=User.find(params[:id])
 	if @user.destroy
-		redirect_to "/account"
+		redirect_to "/users"
 	else
 		render :show
 	end

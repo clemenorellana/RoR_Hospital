@@ -1,20 +1,28 @@
-<h1>Ranking </h1>
 
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Especialidad</th>
-        <th>Citas Atendidas</th>
-        <th>Monto Generado</th>
-    </tr>
-    <% @rankings.each do |ranking| %>
-      <tr>
-        <td><%= ranking.id %></td>
-        <td><%= ranking.name %></td>
-        <td><%= ranking.speciality %></td>
-        <td><%= ranking.appointments %></td>
-        <td><%= ranking.bill %></td>
-      </tr>
-    <% end %>
+<h3 class="heading">
+    Ranking
+</h3>
+    
+
+<table class="table table-striped table-bordered mediaTable">
+    <thead>
+        <tr>
+            <th class="essential persist">ID</th>
+            <th class="essential persist">Nombre</th>
+            <th class="essential persist">Especialidad</th>
+            <th class="essential persist">Citas Atendidas</th>
+            <th class="essential persist">Monto Generado</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @rankings.each do |ranking| %>
+          <tr>
+            <td><%= ranking.id %></td>
+            <td><%= ranking.name %></td>
+            <td><%= ranking.speciality %></td>
+            <td><%= ranking.appointments %></td>
+            <td><%= ranking.bill %></td>
+          </tr>
+        <% end %>  
+    </tbody>
 </table>

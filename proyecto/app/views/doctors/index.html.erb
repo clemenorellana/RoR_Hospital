@@ -1,20 +1,31 @@
-<h1> Listado de Doctores</h1>
 
+<h3 class="heading">
+	Listado de Doctores
+</h3>
+	
 
-
-
-<table>
-<tr>
-<th>Nombre</th>
-<th>Especialidad</th>
-</tr>
-
-<% @doctors.each do |d| %>
-<tr>
-<td><%= link_to d.name, d %></td>
-<td><%= d.speciality %></td>
-</tr>
-<% end %>
+<table class="table table-striped table-bordered mediaTable">
+	<thead>
+		<tr>
+			<th class="essential persist">Nombre</th>
+			<th class="essential persist">Especialidad</th>
+			<th class="essential">Accion</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @doctors.each do |d| %>
+			<tr>
+				<td><%= link_to d.name, d %></td>
+				<td><%= d.speciality %></td>
+				<td>
+					<a href="#" title="Edit"><i class="splashy-document_letter_edit"></i></a>
+					<a href="#" title="Accept"><i class="splashy-document_letter_okay"></i></a>
+					<a href="#" title="Remove"><i class="splashy-document_letter_remove"></i></a>
+				</td>
+			</tr>
+		<% end %>		
+	</tbody>
 </table>
 
 <%= link_to "Agregar Nuevo Doctor", new_doctor_path %>
+

@@ -1,6 +1,6 @@
 class PatientsController < ApplicationController
   def index
-  	@patients=Patient.all
+  	@patients=Patient.where(live: true)
   end
 
   def new

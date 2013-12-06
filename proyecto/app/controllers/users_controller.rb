@@ -1,5 +1,12 @@
 class UsersController < ApplicationController
-	layout 'login', :only => [:account]
+	#layout 'login', :only => [:account]
+	
+	layout :determine_layout
+
+	private
+	def determine_layout
+		%w(new).include?(account) ? "login" : "application"
+  	end
 	
 
 def new
